@@ -36,10 +36,15 @@
                 $this->quarters = floor($calc_quarters) . " quarters";
             }
             //======================DIMES===============================
-            if ($cents >= 10 && $cents < 25)
+            if ($cents >= 10 && $cents < 20)
             {
                 $cents -= 10;
                 $this->dimes = "1 dime";
+            }
+            else if ($cents >=20 && $cents < 25)
+            {
+                $cents -= 20;
+                $this->dimes = "2 dimes";
             }
             //======================NICKEL===============================
             if ($cents >= 5 && $cents <10 )

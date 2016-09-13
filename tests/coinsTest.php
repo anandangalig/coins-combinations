@@ -63,6 +63,21 @@
             $this->assertEquals($desired_result, $result);
         }
 
+        function test_24_cents()
+        {
+            //Arrange
+            $input = 24;
+            $test_Coins = new Coins($input);
+
+            //Act
+            $test_Coins->change_calculator();
+            $result = $test_Coins->dimes ." ". $test_Coins->pennies;
+            $desired_result = "2 dimes 4 pennies";
+
+            //Assert
+            $this->assertEquals($desired_result, $result);
+        }
+
         function test_25_cents()
         {
             //Arrange
@@ -78,35 +93,35 @@
             $this->assertEquals($desired_result, $result);
         }
 
-        // function test_41_cents()
-        // {
-        //     //Arrange
-        //     $input = 41;
-        //     $test_Coins = new Coins($input);
-        //
-        //     //Act
-        //     $test_Coins->change_calculator();
-        //     $result = $test_Coins->quarters;
-        //     $desired_result = "1 quarter 1 dime 1 nickel 1 penny";
-        //
-        //     //Assert
-        //     $this->assertEquals($desired_result, $result);
-        // }
-        //
-        // function test_66_cents()
-        // {
-        //     //Arrange
-        //     $input = 66;
-        //     $test_Coins = new Coins($input);
-        //
-        //     //Act
-        //     $test_Coins->change_calculator();
-        //     $result = $test_Coins->quarters . " " . $test_Coins->pennies;
-        //     $desired_result = "2 quarters 1 dime 1 nickel 1 penny";
-        //
-        //     //Assert
-        //     $this->assertEquals($desired_result, $result);
-        // }
+        function test_41_cents()
+        {
+            //Arrange
+            $input = 41;
+            $test_Coins = new Coins($input);
+
+            //Act
+            $test_Coins->change_calculator();
+            $result = $test_Coins->quarters ." ". $test_Coins->dimes ." ". $test_Coins->nickels ." ". $test_Coins->pennies;
+            $desired_result = "1 quarter 1 dime 1 nickel 1 penny";
+
+            //Assert
+            $this->assertEquals($desired_result, $result);
+        }
+
+        function test_66_cents()
+        {
+            //Arrange
+            $input = 66;
+            $test_Coins = new Coins($input);
+
+            //Act
+            $test_Coins->change_calculator();
+            $result = $test_Coins->quarters ." ". $test_Coins->dimes ." ". $test_Coins->nickels ." ". $test_Coins->pennies;
+            $desired_result = "2 quarters 1 dime 1 nickel 1 penny";
+
+            //Assert
+            $this->assertEquals($desired_result, $result);
+        }
 
     }
  ?>
