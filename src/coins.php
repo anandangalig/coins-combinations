@@ -1,14 +1,21 @@
 <?php
     class Coins{
-        public $cents;
-        public $quarters;
-        public $dimes;
-        public $nickels;
-        public $pennies;
+        private $cents;
+        private $quarters;
+        private $dimes;
+        private $nickels;
+        private $pennies;
+        private $change;
+
 
         function __construct($cents)
         {
             $this->cents = $cents;
+        }
+
+        function getChange()
+        {
+            return $this->change;
         }
 
         function getCents()
@@ -57,14 +64,12 @@
             {
                 $this->pennies = "1 penny";
             }
-            else if ($cents < 5)
+            else if ($cents < 5 && $cents != 0)
             {
                 $this->pennies = $cents . " pennies";
             }
 
-
-
-
+            $this->change = $this->quarters . " " . $this->dimes . " " . $this->nickels . " " .$this->pennies;
         }
     }
  ?>
